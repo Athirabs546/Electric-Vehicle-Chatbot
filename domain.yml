@@ -34,6 +34,30 @@ intents:
   - ask_documentation
   - ask_support_request
   - ask_software_updates
+  - provide_details
+
+slots:
+  user_name:
+    type: text
+    mappings:
+      - type: from_text
+
+  user_email:
+    type: text
+    mappings:
+      - type: from_text
+
+  user_phone:
+    type: text
+    mappings:
+      - type: from_text
+
+forms:
+  user_details_form:
+    required_slots:
+      - user_name
+      - user_email
+      - user_phone  
 
 responses:
 
@@ -126,6 +150,22 @@ responses:
 
   utter_ask_software_updates:
   - text: "Yes, all our models support over-the-air (OTA) updates via our mobile app. Stay updated with new features!"
+
+
+  utter_ask_user_name:
+  - text: "Can I know your name?"
+
+  utter_ask_user_email:
+  - text: "What's your email address?"
+
+  utter_ask_user_phone:
+  - text: "Please provide your contact number."
+
+  utter_submit_details:
+  - text: "Thanks! Your details have been saved."
+
+actions:
+  - action_save_user_details
 
 session_config:
   session_expiration_time: 60

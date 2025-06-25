@@ -244,3 +244,13 @@ nlu:
     - Do you provide software updates?
     - Can the scooter be updated remotely?
     - Is there a mobile app for updates?
+
+
+- intent: provide_details
+  examples: |
+    - I want to give my details
+    - Let me share my contact info
+    - I'd like to provide my name and email
+    - Can I register my details?
+    - I want to submit my information
+

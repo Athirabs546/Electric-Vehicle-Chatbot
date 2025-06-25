@@ -129,3 +129,18 @@ rules:
   - intent: ask_software_updates
   - action: utter_ask_software_updates
 
+
+- rule: Start collecting user details
+  steps:
+    - intent: provide_details
+    - action: user_details_form
+    - active_loop: user_details_form
+
+- rule: Submit user details form
+  condition:
+    - active_loop: user_details_form
+  steps:
+    - action: user_details_form
+    - active_loop: null
+    - action: action_save_user_details
+    - action: utter_submit_details
