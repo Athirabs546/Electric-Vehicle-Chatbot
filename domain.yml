@@ -1,0 +1,47 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_scooter_models
+  - ask_scooter_range
+  - ask_charging_time
+
+responses:
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_greet:
+  - text: "Hello! 👋 I'm here to help you with electric scooter info. How can I assist you?"
+
+  utter_ask_scooter_models:
+  - text: "We offer 3 models: EcoRide 100, CityZoom X, and VoltEdge Pro."
+
+  utter_ask_scooter_range:
+  - text: "Our scooters offer ranges from 80 km to 160 km per full charge, depending on the model."
+
+  utter_ask_charging_time:
+  - text: "Charging times vary: EcoRide takes ~4 hours, while VoltEdge Pro supports fast charging (~2 hours)."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

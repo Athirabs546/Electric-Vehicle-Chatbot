@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Scooter model info
+  steps:
+  - intent: ask_scooter_models
+  - action: utter_ask_scooter_models
+
+- rule: Scooter range info
+  steps:
+  - intent: ask_scooter_range
+  - action: utter_ask_scooter_range
+
+- rule: Charging time info
+  steps:
+  - intent: ask_charging_time
+  - action: utter_ask_charging_time
