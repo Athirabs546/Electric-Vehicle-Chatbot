@@ -1,0 +1,251 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_scooter_models
+  examples: |
+    - What scooter models do you offer?
+    - Can you tell me your scooter variants?
+    - List all available scooters
+    - I want to know about your scooters
+    - What are your latest models?
+
+- intent: ask_scooter_range
+  examples: |
+    - What is the range of your scooters?
+    - How far can I go on a full charge?
+    - Tell me the mileage
+    - What's the battery range?
+
+- intent: ask_charging_time
+  examples: |
+    - How long does it take to charge?
+    - Charging time for your scooters?
+    - How many hours for full charge?
+    - How quickly can I charge it?
+
+- intent: ask_vehicle_models
+  examples: |
+    - What scooter models are available?
+    - Show me the available vehicles
+    - Tell me all the electric scooters you offer
+    - Available electric scooter models?
+
+- intent: ask_price_range
+  examples: |
+    - What is the price range?
+    - How much do your scooters cost?
+    - Give me the pricing info
+    - Tell me the cost of the scooters
+
+- intent: ask_payment_modes
+  examples: |
+    - What payment methods are accepted?
+    - Can I pay in installments?
+    - Do you support EMI?
+    - Is online payment available?
+
+- intent: ask_warranty
+  examples: |
+    - What warranty do you offer?
+    - Do your scooters come with a warranty?
+    - How long is the warranty period?
+    - What does the guarantee cover?
+
+- intent: ask_insurance
+  examples: |
+    - Do you provide insurance?
+    - Is insurance included?
+    - Can I get my scooter insured?
+    - What are the insurance options?
+
+- intent: ask_maintenance
+  examples: |
+    - Do you offer maintenance services?
+    - What about servicing?
+    - Is servicing included?
+    - How often should I service the scooter?
+
+- intent: ask_working_hours
+  examples: |
+    - What are your business hours?
+    - When are you open?
+    - Store timings?
+    - Working time?
+
+- intent: ask_company_info
+  examples: |
+    - Tell me about your company
+    - When was your company started?
+    - Give me a brief about the company
+    - What's your company's history?
+
+- intent: ask_location
+  examples: |
+    - Where is your showroom located?
+    - Give me your address
+    - What is your store location?
+    - Where can I visit?
+
+- intent: ask_contact
+  examples: |
+    - How can I contact you?
+    - What's your phone number?
+    - Provide your contact details
+    - Email or contact info?
+
+- intent: ask_model_comparison
+  examples: |
+    - Compare EcoRide 100 and VoltEdge Pro
+    - What's the difference between your models?
+    - Which model has better range?
+    - Which scooter is better for city use?
+
+- intent: ask_charging_station
+  examples: |
+    - Where can I charge the scooter?
+    - Are there public charging stations?
+    - Do you offer home charger installation?
+
+- intent: ask_test_ride
+  examples: |
+    - Can I book a test ride?
+    - How can I try the scooter?
+    - I want to schedule a test ride
+
+- intent: ask_delivery_time
+  examples: |
+    - When will I receive the scooter?
+    - How many days for delivery?
+    - Is it in stock?
+
+- intent: ask_battery_life
+  examples: |
+    - How long does the battery last?
+    - Battery replacement time?
+    - What is the battery lifespan?
+
+- intent: ask_govt_subsidy
+  examples: |
+    - Do I get government subsidy?
+    - Is there any discount for electric vehicles?
+    - What is the FAME II scheme?
+
+- intent: ask_safety_features
+  examples: |
+    - Does it have anti-theft features?
+    - What safety features do your scooters offer?
+    - Is there GPS tracking?
+
+- intent: ask_documentation
+  examples: |
+    - What documents are needed for purchase?
+    - Do I need ID proof?
+    - What paperwork is required?
+
+- intent: ask_support_request
+  examples: |
+    - I need help with my scooter
+    - Something's wrong with the battery
+    - How do I contact support?
+
+- intent: ask_software_updates
+  examples: |
+    - Do you provide software updates?
+    - Can the scooter be updated remotely?
+    - Is there a mobile app for updates?
+
+- intent: start_form
+  examples: |
+    - I want to register
+    - I want to give my details
+    - I would like to share my contact
+    - let me provide my info

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eScoot - Electric Scooters for Sale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Admin Login link -->
+        <a href="{{ url_for('login') }}" class="admin-login">Admin Login</a>
+        <h1>⚡ eScoot</h1>
+        <p>Your destination for high-performance electric scooters</p>
+    </header>
+
+    <section class="hero">
+        <h2>Ride into the Future</h2>
+        <p>Explore our latest collection of eco-friendly, powerful, and sleek scooters.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+
+    <section id="products" class="product-section">
+        <h3>Popular Models</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x120" alt="Scooter 1">
+                <h4>ScootX Pro</h4>
+                <p>Top Speed: 45 km/h</p>
+                <p>Range: 60 km</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x120" alt="Scooter 2">
+                <h4>EcoRider Lite</h4>
+                <p>Top Speed: 30 km/h</p>
+                <p>Range: 40 km</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200x120" alt="Scooter 3">
+                <h4>VoltEdge X</h4>
+                <p>Top Speed: 50 km/h</p>
+                <p>Range: 75 km</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 eScoot. All rights reserved.</p>
+    </footer>
+
+    <!-- Chat Toggle Icon -->
+<div id="chat-toggle">&#128172;</div>
+
+<!-- Chat Box -->
+<div id="chat-box" style="display:none;">
+    <div id="chat-header">eScoot Chat</div>
+    <div id="chat-messages"></div>
+    <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatBox = document.getElementById('chat-box');
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+
+    chatToggle.onclick = () => {
+        chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
+    };
+
+    function sendMessage() {
+        const message = userInput.value;
+        if (!message) return;
+
+        const userMsg = document.createElement('div');
+        userMsg.textContent = "You: " + message;
+        chatMessages.appendChild(userMsg);
+
+        fetch('/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const botMsg = document.createElement('div');
+            botMsg.textContent = "Bot: " + data.response;
+            chatMessages.appendChild(botMsg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+
+        userInput.value = '';
+    }
+</script>
+
+
+</body>
+</html>

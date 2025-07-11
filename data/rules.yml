@@ -1,0 +1,142 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Scooter model info
+  steps:
+  - intent: ask_scooter_models
+  - action: utter_ask_scooter_models
+
+- rule: Scooter range info
+  steps:
+  - intent: ask_scooter_range
+  - action: utter_ask_scooter_range
+
+- rule: Charging time info
+  steps:
+  - intent: ask_charging_time
+  - action: utter_ask_charging_time
+
+- rule: Provide vehicle models
+  steps:
+  - intent: ask_vehicle_models
+  - action: utter_ask_vehicle_models
+
+- rule: Provide price range
+  steps:
+  - intent: ask_price_range
+  - action: utter_ask_price_range
+
+- rule: Provide payment modes
+  steps:
+  - intent: ask_payment_modes
+  - action: utter_ask_payment_modes
+
+- rule: Provide warranty info
+  steps:
+  - intent: ask_warranty
+  - action: utter_ask_warranty
+
+- rule: Provide insurance details
+  steps:
+  - intent: ask_insurance
+  - action: utter_ask_insurance
+
+- rule: Provide maintenance service info
+  steps:
+  - intent: ask_maintenance
+  - action: utter_ask_maintenance
+
+- rule: Provide working hours
+  steps:
+  - intent: ask_working_hours
+  - action: utter_ask_working_hours
+
+- rule: Provide company info
+  steps:
+  - intent: ask_company_info
+  - action: utter_ask_company_info
+
+- rule: Provide store location
+  steps:
+  - intent: ask_location
+  - action: utter_ask_location
+
+- rule: Provide contact information
+  steps:
+  - intent: ask_contact
+  - action: utter_ask_contact
+
+- rule: Compare models
+  steps:
+  - intent: ask_model_comparison
+  - action: utter_ask_model_comparison
+
+- rule: Provide charging station info
+  steps:
+  - intent: ask_charging_station
+  - action: utter_ask_charging_station
+
+- rule: Book test ride
+  steps:
+  - intent: ask_test_ride
+  - action: utter_ask_test_ride
+
+- rule: Provide delivery time
+  steps:
+  - intent: ask_delivery_time
+  - action: utter_ask_delivery_time
+
+- rule: Provide battery life info
+  steps:
+  - intent: ask_battery_life
+  - action: utter_ask_battery_life
+
+- rule: Provide government subsidy info
+  steps:
+  - intent: ask_govt_subsidy
+  - action: utter_ask_govt_subsidy
+
+- rule: Provide safety features
+  steps:
+  - intent: ask_safety_features
+  - action: utter_ask_safety_features
+
+- rule: Provide required documents
+  steps:
+  - intent: ask_documentation
+  - action: utter_ask_documentation
+
+- rule: Support request
+  steps:
+  - intent: ask_support_request
+  - action: utter_ask_support_request
+
+- rule: Provide software updates info
+  steps:
+  - intent: ask_software_updates
+  - action: utter_ask_software_updates
+
+- rule: Activate user details form
+  steps:
+    - intent: start_form
+    - action: user_details_form
+    - active_loop: user_details_form
+
+- rule: Submit user details form
+  condition:
+    - active_loop: user_details_form
+  steps:
+    - action: user_details_form
+    - active_loop: null
+    - action: action_submit_user_details

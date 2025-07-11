@@ -1,0 +1,182 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_scooter_models
+  - ask_scooter_range
+  - ask_charging_time
+  - ask_vehicle_models
+  - ask_price_range
+  - ask_payment_modes
+  - ask_warranty
+  - ask_insurance
+  - ask_maintenance
+  - ask_working_hours
+  - ask_company_info
+  - ask_location
+  - ask_contact
+  - ask_model_comparison
+  - ask_charging_station
+  - ask_test_ride
+  - ask_delivery_time
+  - ask_battery_life
+  - ask_govt_subsidy
+  - ask_safety_features
+  - ask_documentation
+  - ask_support_request
+  - ask_software_updates
+  - start_form
+  - provide_info
+
+entities:
+  - name
+  - email
+  - phone_number
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: user_details_form
+            requested_slot: name
+
+  email:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: user_details_form
+            requested_slot: email
+
+  phone_number:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: user_details_form
+            requested_slot: phone_number
+
+forms:
+  user_details_form:
+    required_slots:
+      - name
+      - email
+      - phone_number
+
+responses:
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_greet:
+  - text: "Hello! 👋 I'm here to help you with electric scooter info. How can I assist you?"
+
+  utter_ask_scooter_models:
+  - text: "We offer 3 models: EcoRide 100, CityZoom X, and VoltEdge Pro."
+
+  utter_ask_scooter_range:
+  - text: "Our scooters offer ranges from 80 km to 160 km per full charge, depending on the model."
+
+  utter_ask_charging_time:
+  - text: "Charging times vary: EcoRide takes ~4 hours, while VoltEdge Pro supports fast charging (~2 hours)."
+
+  utter_ask_vehicle_models:
+  - text: "We offer EcoRide 100, CityZoom X, and VoltEdge Pro. Each has unique features and range."
+
+  utter_ask_price_range:
+  - text: "Our scooters range from ₹75,000 to ₹1,25,000 depending on the model and configuration."
+
+  utter_ask_payment_modes:
+  - text: "We accept UPI, credit/debit cards, net banking, and EMI via partnered banks."
+
+  utter_ask_warranty:
+  - text: "All models come with a 3-year battery warranty and 2-year vehicle warranty."
+
+  utter_ask_insurance:
+  - text: "We offer third-party and comprehensive insurance options at the time of purchase."
+
+  utter_ask_maintenance:
+  - text: "You get 3 free services within the first year. Regular maintenance is recommended every 6 months."
+
+  utter_ask_working_hours:
+  - text: "We're open Monday to Saturday from 9 AM to 7 PM. Closed on Sundays."
+
+  utter_ask_company_info:
+  - text: "Founded in 2022, our company is focused on sustainable mobility through high-performance electric scooters."
+
+  utter_ask_location:
+  - text: "Our main showroom is at MG Road, Bengaluru. You can find all locations on our website."
+
+  utter_ask_contact:
+  - text: "You can reach us at 📞 080-12345678 or 📧 support@scooterelectric.com"
+
+  utter_ask_model_comparison:
+  - text: "EcoRide 100 is lightweight with 80 km range, while VoltEdge Pro offers premium features and 160 km range."
+
+  utter_ask_charging_station:
+  - text: "Yes! We provide a home charger and also support public charging stations via our partner network."
+
+  utter_ask_test_ride:
+  - text: "Sure! Visit our website or nearest showroom to book a free test ride at your convenience."
+
+  utter_ask_delivery_time:
+  - text: "Delivery usually takes 5-7 business days based on your location and model availability."
+
+  utter_ask_battery_life:
+  - text: "Our lithium-ion batteries typically last 5 years or about 1000 charging cycles with normal use."
+
+  utter_ask_govt_subsidy:
+  - text: "Yes, our scooters are eligible under the FAME II subsidy scheme. Discounts are auto-applied at purchase."
+
+  utter_ask_safety_features:
+  - text: "Our scooters come with GPS tracking, anti-theft lock, regenerative braking, and LED indicators."
+
+  utter_ask_documentation:
+  - text: "You'll need a valid ID proof (Aadhar/Driving License) and address proof for booking and registration."
+
+  utter_ask_support_request:
+  - text: "We're here to help! You can call 080-12345678 or email support@scooterelectric.com for technical assistance."
+
+  utter_ask_software_updates:
+  - text: "Yes, all our models support over-the-air (OTA) updates via our mobile app. Stay updated with new features!"
+
+  utter_ask_name:
+    - text: "What is your name?"
+
+  utter_ask_email:
+    - text: "What is your email address?"
+
+  utter_ask_phone_number:
+    - text: "What is your phone number?"
+
+  utter_submit:
+    - text: "Thank you, your details have been collected."
+
+actions:
+  - action_submit_user_details
+  - validate_user_details_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
